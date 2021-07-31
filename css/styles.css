@@ -1,0 +1,277 @@
+:root {
+    --startOpacity: 1;
+    --cardColors: orangered;
+    --navigationWidth: 100%;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    top: 0;
+    left: 0;
+    background-color: #2b2b2b;
+    color: rgb(204, 204, 204);
+    overflow-x: hidden;
+}
+
+#title_container {
+    width: 100%;
+    position: fixed;
+    left: 50%;
+    transform: translate(-50%, 20%);
+    text-align: center;
+    margin-top: 25%;
+}
+
+#anim_container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+p {
+    font-size: 1.2em;
+}
+
+.col-sm img {
+    width: 100%;
+    height: 20em;
+}
+
+#particles-js {
+    height: 100%;
+    width: 100%;
+    background: #13131b;
+    position: fixed;
+    z-index: -100;
+}
+
+header {
+    position: fixed;
+    width: 100vw;
+    height: 120px;
+    display: flex;
+    flex-direction: column;
+    z-index: 10;
+    transition: 1s;
+}
+
+footer {
+    color: white;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    z-index: 10;
+}
+
+#blank_space {
+    width: 100%;
+    height: 900px;
+}
+
+nav {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-top: 20px;
+}
+
+a {
+    transition-duration: .5s;
+    text-decoration: none;
+    font-size: 1.3em;
+    color: white;
+}
+
+a:hover {
+    transition-duration: .5s;
+    font-size: 1.4em;
+    text-decoration: underline;
+    color: white;
+}
+
+#sectionTitle_wrapper {
+    margin-top: 7%;
+    text-align: center;
+}
+
+.btn_container {
+    display: flex;
+    justify-content: center;
+}
+
+h1 {
+    opacity: var(--startOpacity);
+    color: white;
+    font-size: 2em;
+}
+
+h2 {
+    opacity: var(--startOpacity);
+    color: white;
+    font-size: 1.2em;
+}
+
+button {
+    position: relative;
+    height: 60px;
+    width: 200px;
+    margin: 0 35px;
+    border-radius: 50px;
+    border: none;
+    outline: none;
+    background: #111;
+    color: #fff;
+    font-size: 20px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+button:active,
+button:focus {
+    outline: none;
+}
+
+button:first-child:hover {
+    background: linear-gradient(90deg, #03a9f4, #f441a5, #ffeb3b, #03a9f4);
+    background-size: 400%;
+}
+
+button:last-child:hover {
+    background: linear-gradient(90deg, #fa7199, #f5ce62, #e43603, #03a9f4);
+    background-size: 400%;
+}
+
+button:first-child::before,
+button:last-child::before {
+    content: '';
+    position: absolute;
+    background: inherit;
+    top: -5px;
+    right: -5px;
+    bottom: -5px;
+    left: -5px;
+    border-radius: 50px;
+    filter: blur(20px);
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+
+button:first-child:hover:before,
+button:last-child:hover:before {
+    opacity: 1;
+    z-index: -1;
+}
+
+button:hover {
+    z-index: 1;
+    animation: glow 8s linear infinite;
+}
+
+
+/*This block (starts here) is merely styling for the flip card, and is NOT an essential part of the flip code */
+
+#main-footer {
+    height: 750px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #15161D;
+}
+
+.footer-content {
+    margin-top: 30px;
+    padding: 10px;
+    width: 80%;
+}
+
+.footer-title {
+    text-align: left;
+}
+
+.footer-text {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+#footer-derechos {
+    height: 100px;
+    padding-right: 10%;
+    padding-left: 10%;
+    background-color: #21232E;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+@keyframes glow {
+    0% {
+        background-position: 0%;
+    }
+    100% {
+        background-position: 100%;
+    }
+}
+
+@media(min-width:600px) {
+    nav {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    h1 {
+        font-size: 2.3em;
+    }
+    h2 {
+        font-size: 1.3em;
+    }
+    #title_container {
+        margin-top: 10%;
+    }
+    header {
+        height: 80px;
+    }
+}
+
+@media(min-width:768px) {
+    header {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    #logo_wrapper {
+        text-align: left;
+        margin-left: 2%;
+        margin-top: 10px;
+    }
+    nav {
+        width: 400px;
+        align-items: center;
+        margin-right: 4%;
+    }
+    h1 {
+        font-size: 3.5em;
+    }
+    h2 {
+        font-size: 2em;
+    }
+    #main-footer {
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: baseline;
+        height: 350px;
+    }
+    .footer-content {
+        width: 300px;
+        margin: 20px;
+        padding: 20px;
+    }
+}

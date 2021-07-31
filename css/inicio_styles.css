@@ -1,0 +1,439 @@
+.row {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+
+/*Cards stuff starts here*/
+
+
+/* THE MAINCONTAINER HOLDS EVERYTHING */
+
+#margin_cards {
+    margin-bottom: 1600px;
+    margin-bottom: 500px;
+}
+
+.card_main_container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-bottom: 400px;
+}
+
+
+/* THE CARD HOLDS THE FRONT AND BACK FACES */
+
+.the_card {
+    width: 250px;
+    height: 350px;
+    margin: 40px;
+    transform-style: preserve-3d;
+    /*transition: all 1s ease;*/
+    transition: transform 1.5s;
+}
+
+
+/* THE PSUEDO CLASS CONTROLS THE FLIP ON MOUSEOVER AND MOUSEOUT */
+
+.card_wrapper:hover .the_card {
+    transform: rotateY(180deg);
+}
+
+
+/* THE FRONT FACE OF THE CARD, WHICH SHOWS BY DEFAULT */
+
+.the_front {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    background: rgba( 0, 0, 0, 0.25);
+    border-radius: 5px;
+    background: #13131b;
+    box-shadow: 9px 9px 18px #08080b, -9px -9px 18px #1e1e2b;
+}
+
+.img_card_container {
+    height: 50%;
+    margin-top: 6%;
+}
+
+.img_card {
+    height: 100%;
+    background-color: white;
+    border-radius: 50%;
+    border: black solid 2px;
+}
+
+.card_title {
+    text-decoration: overline;
+    color: white;
+    display: block;
+    font-size: 2em;
+    margin-block-start: 1em;
+    margin-block-end: 0.67em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+.card_footer {
+    margin-top: 4%;
+    height: 18%;
+}
+
+
+/* THE BACK FACE OF THE CARD, WHICH SHOWS ON MOUSEOVER */
+
+.the_back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    overflow: hidden;
+    text-align: center;
+    transform: rotateY(180deg);
+    box-shadow: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: rgba( 0, 0, 0, 0.25);
+    border-radius: 5px;
+    background: #13131b;
+    box-shadow: 9px 9px 18px #08080b, -9px -9px 18px #1e1e2b;
+}
+
+.the_back button {
+    left: 50%;
+    transform: translateX(-68%);
+}
+
+.the_front h1,
+.the_back h1 {
+    font-family: 'zilla slab', sans-serif;
+    padding: 30px;
+    font-weight: bold;
+    font-size: 42px;
+    text-align: center;
+}
+
+.the_front p,
+.the_back p {
+    font-family: 'zilla slab', sans-serif;
+    padding: 30px;
+    font-weight: normal;
+    font-size: 22px;
+    text-align: center;
+}
+
+.the_back a {
+    margin-right: 3em
+}
+
+
+/* Card stuff ends here*/
+
+
+/*Slider starts*/
+
+.slider {
+    width: var(--navigationWidth);
+    height: 600px;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-top: 200px;
+    margin-bottom: 400px;
+    max-width: 1000px;
+}
+
+.slides {
+    width: 500%;
+    height: 500px;
+    display: flex;
+}
+
+.slides input {
+    display: none;
+}
+
+.slide {
+    width: 20%;
+    transition: 2s;
+    padding: 40px;
+}
+
+.slide img {
+    width: 800px;
+    height: 500px;
+}
+
+
+/*css for manual navigations*/
+
+.navigation-manual {
+    position: absolute;
+    width: var(--navigationWidth);
+    margin-top: -0px;
+    display: flex;
+    justify-content: center;
+    max-width: 1000px;
+}
+
+.manual-btn {
+    border: 2px solid #40D3DC;
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 1s;
+}
+
+.manual-btn:not(:last-child) {
+    margin-right: 40px;
+}
+
+.manual-btn:hover {
+    background: #40D3DC;
+}
+
+#radio1:checked~.first {
+    margin-left: 0;
+}
+
+#radio2:checked~.first {
+    margin-left: -20%;
+}
+
+#radio3:checked~.first {
+    margin-left: -40%;
+}
+
+#radio4:checked~.first {
+    margin-left: -60%;
+}
+
+
+/*css for automatic navigation*/
+
+.navigation-auto {
+    position: absolute;
+    display: flex;
+    width: var(--navigationWidth);
+    justify-content: center;
+    margin-top: 500px;
+    max-width: 1000px;
+}
+
+.navigation-auto div {
+    border: 2px solid #40D3DC;
+    padding: 5px;
+    border-radius: 10px;
+    transition: 1s;
+}
+
+.navigation-auto div:not(:last-child) {
+    margin-right: 40px;
+}
+
+#radio1:checked~.navigation-auto .auto-btn1 {
+    background: #40D3DC;
+}
+
+#radio2:checked~.navigation-auto .auto-btn2 {
+    background: #40D3DC;
+}
+
+#radio3:checked~.navigation-auto .auto-btn3 {
+    background: #40D3DC;
+}
+
+#radio4:checked~.navigation-auto .auto-btn4 {
+    background: #40D3DC;
+}
+
+.slide h2 {
+    font-size: 2em;
+}
+
+.slide p {
+    font-size: 1em;
+}
+
+
+/*end of slider css*/
+
+
+/*animated title css*/
+
+#animation_1 {
+    width: 200px;
+    margin-right: 20px;
+    animation: fill 0.5s ease forwards 4s;
+}
+
+#animation_2 {
+    width: 250px;
+    animation: fill 0.5s ease forwards 4s;
+}
+
+#subtitle {
+    margin-top: 3%;
+    font-size: .8em;
+    opacity: 0%;
+    animation: appear 1s ease forwards 4.5s;
+}
+
+#autoScroll_btn {
+    opacity: 0%;
+    animation: appear 1s ease forwards 4.5s;
+}
+
+#animation_1 path:nth-child(1) {
+    stroke-dasharray: 493;
+    stroke-dashoffset: 493;
+    animation: line-animation 1s ease forwards;
+}
+
+#animation_1 path:nth-child(2) {
+    stroke-dasharray: 483;
+    stroke-dashoffset: 483;
+    animation: line-animation 1s ease forwards .2s;
+}
+
+#animation_1 path:nth-child(3) {
+    stroke-dasharray: 605;
+    stroke-dashoffset: 605;
+    animation: line-animation 1s ease forwards .4s;
+}
+
+#animation_1 path:nth-child(4) {
+    stroke-dasharray: 298;
+    stroke-dashoffset: 298;
+    animation: line-animation 1s ease forwards .6s;
+}
+
+#animation_1 path:nth-child(5) {
+    stroke-dasharray: 464;
+    stroke-dashoffset: 464;
+    animation: line-animation 1s ease forwards .8s;
+}
+
+#animation_1 path:nth-child(6) {
+    stroke-dasharray: 493;
+    stroke-dashoffset: 493;
+    animation: line-animation 1s ease forwards 1s;
+}
+
+#animation_1 path:nth-child(7) {
+    stroke-dasharray: 493;
+    stroke-dashoffset: 493;
+    animation: line-animation 1s ease forwards 1.2s;
+}
+
+#animation_2 path:nth-child(1) {
+    stroke-dasharray: 493;
+    stroke-dashoffset: 493;
+    animation: line-animation 1s ease forwards 1.4s;
+}
+
+#animation_2 path:nth-child(2) {
+    stroke-dasharray: 565;
+    stroke-dashoffset: 565;
+    animation: line-animation 1s ease forwards 1.6s;
+}
+
+#animation_2 path:nth-child(3) {
+    stroke-dasharray: 385;
+    stroke-dashoffset: 385;
+    animation: line-animation 1s ease forwards 1.8s;
+}
+
+#animation_2 path:nth-child(4) {
+    stroke-dasharray: 337;
+    stroke-dashoffset: 337;
+    animation: line-animation 1s ease forwards 2s;
+}
+
+#animation_2 path:nth-child(5) {
+    stroke-dasharray: 802;
+    stroke-dashoffset: 802;
+    animation: line-animation 1s ease forwards 2.2s;
+}
+
+#animation_2 path:nth-child(6) {
+    stroke-dasharray: 490;
+    stroke-dashoffset: 490;
+    animation: line-animation 1s ease forwards 2.4s;
+}
+
+#animation_2 path:nth-child(7) {
+    stroke-dasharray: 549;
+    stroke-dashoffset: 549;
+    animation: line-animation 1s ease forwards 2.6s;
+}
+
+#animation_2 path:nth-child(8) {
+    stroke-dasharray: 464;
+    stroke-dashoffset: 464;
+    animation: line-animation 1s ease forwards 2.8s;
+}
+
+@keyframes line-animation {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes fill {
+    from {
+        fill: transparent;
+    }
+    to {
+        fill: white;
+    }
+}
+
+@keyframes appear {
+    to {
+        opacity: 100%;
+    }
+}
+
+@media(min-width:600px) {
+    .the_card {
+        width: 400px;
+        height: 500px;
+    }
+    .slide h2 {
+        font-size: 3em;
+    }
+    .slide p {
+        font-size: 1.5em;
+    }
+    #subtitle {
+        font-size: 1em;
+    }
+    .card_title {
+        font-size: 3em;
+    }
+}
+
+@media(min-width:768px) {
+    #subtitle {
+        font-size: 1.5em;
+    }
+    #animation_1 {
+        width: 476px;
+        margin-right: 50px;
+    }
+    #animation_2 {
+        width: 636px;
+    }
+}
